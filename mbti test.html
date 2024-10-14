@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <title>홀로라이브 취향저격 멤버 찾기!</title>
+        <style>
+            @font-face {
+                font-family : '굵';
+                src : url(fonts/NanumSquareEB.ttf);
+            }
+            .btn {
+                color:#25232e;
+                background-color: white;
+                border-color: transparent;
+                border-radius: 4vw;
+                font-size: 3vw;
+                padding: 1vw;
+                margin-bottom: 6vh;
+                width: 50vw;
+                font-family: 굵;
+            }
+            span {
+                display:inline-block;
+                font-family: 굵;
+                color: white;
+                font-size: 5vw;
+                letter-spacing: 0.2vw;
+                margin-bottom: 16vh;
+            }
+            p {
+                text-align: right;
+                font-family: 굵;
+                color: white;
+                font-size: 2vw;
+                margin-top: 0%;
+                margin-bottom: 10vh;
+            }
+            .container {
+                width:98vw;
+                height:98vh;
+                padding: 0%;
+                display: none;
+            }
+          </style>
+    </head>
+    
+
+    <body bgcolor="#25232e" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+        <div class="container" style="display: block;">
+            <p style="margin: 0%; padding: 0%;">제작 - 유튜브 홀로우드</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span style="padding-top:8vh; margin-top:6vh; margin-bottom: 16vh;" id="titleText"> <br> <br> <br> </span>
+                     <br>
+                     <span style="font-size: 2vw; color:white; margin-bottom: 1vh;" id="number"> </span>
+                <br>
+                 <button class="btn"  type="button" onclick="clickk(-1,0)">시작하기</button>
+              </div>
+          </div>
+        <!--
+            1. 키리누키
+            2. 게임 취향
+            3. 방송 취향
+            4. 연상 연하
+            5. 언어
+            6. 콜라보
+            7. 시끌 잔잔
+            8. 인싸/게닌/아싸
+            9. 목소리 톤
+            10. 방송 빈도
+            11. 수위
+            12. 노래실력
+            13. 대화타입
+            -->
+        <!--1번 질문-->
+        <div class="container">
+          <p>12개만 더 하면돼요!</p>
+           <div style="text-align: center;padding: 0;">
+               
+                   <span >홀로라이브는 이걸로 보고있지!</span>
+              <br>
+               <button class="btn"  type="button" onclick="clickk(0,0)">키리누키 클립</button>
+               <br>
+                <button class="btn"  type="button" onclick="clickk(0,1)">생방송/녹화본</button>
+                <br>
+                <button class="btn"  type="button" onclick="clickk(0,2)">상관없다</button>
+            </div>
+        </div>
+        <!--2번 질문-->
+        <div class="container" >
+            <p >앞으로 11개</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >이런 게임이 보고싶어!</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(1,0)">FPS/총게임</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(1,1)">싱글게임</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(1,2)">온라인게임</button>
+              </div>
+          </div>
+          <!--3번 질문-->
+          <div class="container" >
+            <p >앞으로 10개</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >이런 방송이 좋아!</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(2,0)">잡담/소통 방송</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(2,1)">게임 방송</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(2,2)">기획 방송(etc.노래, 요리)</button>
+              </div>
+          </div>
+          <!--4번 질문-->
+          <div class="container" >
+            <p >앞으로 9개</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >이런 분위기가 제맛이지</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(3,0)">이모가 좋아!(연상)</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(3,1)">응애가 좋아!(연하)</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(3,2)">나랑 비슷한게 좋아!</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >취향저격 멤버까지 8개</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >이 언어가 듣고싶어!</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(4,0)">영어</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(4,1)">일본어</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(4,2)">인도네시아어</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >취향저격 멤버까지 7개</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >개인 취향입니다만?</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(5,0)">콜라보 방송이 좋아</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(5,1)">혼자하는 방송이 좋아</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(5,2)">'난 둘 다'</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >취향저격 멤버까지 6개</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >내가 생방송을 보는 방법은..</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(6,0)">다른거 하거나 자면서 보기</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(6,1)">1분 1초 집중해서 보는 편</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(6,2)">키리누키만 보는데요?</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >5개 남았습니다</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >이런 멤버가 좋더라</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(7,0)">항상 활!! 발!!!!</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(7,1)">얘는 그냥 웃김ㅋㅋㅋ</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(7,2)">아싸력 높은 멤버..</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >4개 남았습니다</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >역시 목소리도 중요하지</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(8,0)">저음이 매력적이야</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(8,1)">하이톤이 귀엽지</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(8,2)">어..적당하게 주세요</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >3!</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >방송은 얼마나 있어야할까?</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(9,0)">많을수록 좋아</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(9,1)">이틀에 한번만 해도돼</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(9,2)">상관없어</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >2!</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >방송 매운맛은 이정도면 좋겠어</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(10,0)">불닭볶음면</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(10,1)">진라면</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(10,2)">냉면</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >마지막!</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >노래 실력은?</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(11,0)">잘부르면 좋지</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(11,1)">적당히 부를줄만 알면돼</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(11,2)">못불러도 재밌으면돼</button>
+              </div>
+          </div>
+
+          <div class="container" >
+            <p >인 줄 알았죠?</p>
+             <div style="text-align: center;padding: 0;">
+                 
+                     <span >이렇게 만담하는게 좋아</span>
+                     <br>
+                 <button class="btn"  type="button" onclick="clickk(12,0)">츳코미(태클걸기)</button>
+                 <br>
+                  <button class="btn"  type="button" onclick="clickk(12,1)">보케(동네바보)</button>
+                  <br>
+                  <button class="btn"  type="button" onclick="clickk(12,2)">맛만 좋으면 돼</button>
+              </div>
+          </div>
+
+          <div class="container" style="width:98vw; height: auto; margin: auto; padding: 0%; display: none;">
+            <p style="margin-bottom: 0%;padding-bottom: 0%;">결과입니다!</p>
+             <div style="text-align: center;padding: 0;">
+                
+                    <span style="margin-bottom: 0%; margin-top: 2vh; padding-top: 0vh;">당신의 취저 멤버는</span>
+                    <br>
+                    <span id="resultName" style="margin-bottom: 0%;"></span>
+                    <br>
+                    <img id="resultImg" style="height:30vh; padding-top: 2vh;">
+                    <br>
+                    <span id="resultNum" style="font-size: 2vw; margin-bottom: 2vh; margin-top: 0%;"></span>
+                    <br>
+                    <button class="btn"  type="button" style="padding-bottom: 1vh; margin-bottom: 1.5vh;" onclick="clickk(13,0)">맞나요?</button>
+                    <br style="padding-bottom:8vh;">
+                    <span style="margin-bottom: 1vh; margin-top: 2vh; padding-top: 0vh;  font-size: 4vw;">이런 멤버도 어울리세요!</span>
+                    <br>
+                <div style="display:inline-block;">
+                    <img class="resultImg" style="width: 15vw; padding-bottom: 0vh;">
+                    <br>
+                    <span class="resultName" style="margin-bottom: 0%; font-size: 2vw;"></span>
+                </div>
+                <div style="display:inline-block; padding-left: 3vw; padding-right: 3vw;">
+                    <img class="resultImg" style="width: 15vw; padding-bottom: 0vh;">
+                    <br>
+                    <span class="resultName" style="margin-bottom: 0%; font-size: 2vw;"></span>      
+                </div>
+                <div style="display:inline-block; ">
+                    <img class="resultImg" style="width: 15vw; padding-bottom: 0vh;">
+                    <br>
+                    <span class="resultName" style="margin-bottom: 0%; font-size: 2vw;"></span>      
+                </div>
+                <br style="padding-bottom:12vh;">
+                <button class="btn"  type="button" style="margin-top: 4vh;" onclick="clickk(13,1)">아닌가요?</button>
+            </div>
+          </div>
+
+          <div class="container" style="width:98vw; margin: auto; padding: 0%; display: none;">
+            <p >이런...</p>
+             <div style="text-align: center;padding: 0;">
+                
+                    <span >정확도 개선을 도와주세요!</span>
+                    <br>
+                    <input type="text" id="name" placeholder="최애멤버의 이름을 적어주세요 (etc. 아멜리아 왓슨)" style="margin-bottom: 12vh; height: 8vh; width: 80%; font-family: 굵; font-size: 3vw; text-align: center;">
+                    <br>
+                    <input class="btn" type="submit" value="보내기" onclick="clickk(14)"></button>
+            </div>
+          </div>
+          <style>
+              body{
+                -ms-overflow-style: none;
+                }
+ 
+::-webkit-scrollbar {
+  display: none;
+}
+          </style>
+              <script src="https://www.gstatic.com/charts/loader.js"></script>
+              <SCRIPT LANGUAGE='JAVASCRIPT'>
+          /*
+          질문 1번: 0.키리누키 공급 많음 1.적음 2.계산X
+          질문 2번: 0.fps 1.싱글 2.멀티
+          */
+                  var ans = [0,0,0,0,0,0,0,0,0,0,0,0,0,""];
+                  var userCount = 5000;
+                  var nodes = 
+                 [[[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //토키노 소라
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //로보코
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //아즈키
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //미코
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //스이
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //멜
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //아키로제
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //하쨔마
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //마츠리
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //아쿠아
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //시온
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //아야메
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //초코
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //스바루
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //미오
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //오카유
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //코로네
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //후부키
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //페코라
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //후레아
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //노엘
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //마린
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //카나타
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //코코
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //와탓
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //토와
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //루나
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //라미
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //네네
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //보탄
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //폴카
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //라프
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //루이
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //코요리
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //클로에
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //카자마
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //리스
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //무나
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //이오피
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //올리
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //아냐
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //레이네
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //제타
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //카엘라
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //코보
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //칼리
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //키아라
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //이나
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //구라
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //왓슨
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //아이리스
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //사나
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //파우나
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //크로니
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0], //무메이
+                  [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],0]]; //벨즈
+          
+                  window.onload = function(){
+                    window.location.href = './index.html';
+                    /*
+                      readData();
+                      
+                      let txt = document.getElementById("titleText");
+                      setTimeout(function() { txt.innerText = "빅데이터가\n\n\n"; }, 400);
+                      setTimeout(function() { txt.innerText = "빅데이터가\n당신의 취저 멤버를\n\n"; }, 800);
+                      setTimeout(function() { txt.innerText = "빅데이터가\n당신의 취저 멤버를\n찾아드립니다\n"; }, 1200);
+                      setTimeout(function() { numberCount(); }, 1400);
+                      */
+                  };
+
+var ci=0;
+let txt = document.getElementById("number");
+// 랜덤 값을 생성하는 함수, userCount의 자릿수 ~ userCount 까지 랜덤 정수 생성
+const countEvent = () => {
+  // 자릿수를 구합니다 예를들어, 5102명이면 1000을 리턴합니다
+  let minCount = 10**Number(userCount.toString().length - 1)
+  // minCount <= ci < userCount 사이의 값을 출력합니다
+  ci = Math.floor(Math.random() * (userCount-minCount) + minCount);
+  txt.innerText = "지금까지 " + ci + "명이 취향저격 당했습니다."
+}
+
+function numberCount() {
+  let radomCount = setInterval(countEvent, 10)
+  // 3초 뒤 랜덤 값 생성을 중단하고 원래 수를 출력합니다
+  setTimeout(function(){
+    clearInterval(radomCount);
+    txt.innerHTML = "지금까지 " + userCount + "명이 취향저격 당했습니다.";
+  }, 3000)
+}
+//Bhanjo님 좋은 코드 감사합니다.
+
+                function clickk(num,index)
+                {
+                    if(num==-1)
+                    {
+                        next(num);
+                        return 0;
+                    }
+                    else if(num==12)
+                    {
+                        makeResult();
+                    }
+                    else if(num==13)
+                    {
+                        if(index==0)
+                        {
+                            sendData(document.getElementById("resultName").innerText.split("'")[1]);
+                        }
+                        else
+                        {
+                            next(num);
+                        }
+                        return true;
+                    }
+                    else if(num == 14)
+                    {
+                        sendData();
+                        return 0;
+                    }
+                    ans[num] = index;
+                    for(var i =0;i<=3;i++)
+                    {
+                        if(i==index)
+                        {
+                            document.getElementsByClassName("btn")[num*3+i+1].style.backgroundColor = "#A8A8A8";
+                        }
+                        else
+                        {
+                            document.getElementsByClassName("btn")[num*3+i+1].style.backgroundColor = "#ffffff";
+                        }
+                    }
+
+                    next(num);
+                }
+          
+                  function next(quiz_num)
+                  {
+                      quiz_num+=2;
+                      document.getElementsByClassName('container')[quiz_num].style.display = "block";
+                      const target_top = document.getElementsByClassName('container')[quiz_num].offsetTop;
+                      window.scroll({top : target_top, behavior: 'smooth'});
+                  }
+          
+                function makeResult()
+                {
+                    for(var i=0; i<nodes.length; i++)
+                    {
+                        nodes[i][13] = 0;
+                        for(var num=0;num<13;num++)
+                        {
+                            nodes[i][13] += nodes[i][num][ans[num]];
+                        }
+                    }
+                    var max_index = 0;
+                    var pre_max_index = -1;
+                    var ppre_max_index = -1;
+                    var pppre_max_index = -1;
+                    for(var i=1;i<nodes.length;i++)
+                    {
+                        if(nodes[i][13] > nodes[max_index][13])
+                        {
+                            max_index = i;
+                        } else {
+                            if(pre_max_index==-1)
+                            {
+                                pre_max_index = i;
+                            } else if(nodes[i][13] > nodes[pre_max_index][13]) {
+                                pre_max_index = i;
+                            } else {
+                                if(ppre_max_index==-1)
+                                {
+                                    ppre_max_index = i;
+                                } else if(nodes[i][13] > nodes[ppre_max_index][13]) {
+                                    ppre_max_index = i;
+                                } else {
+                                    if(pppre_max_index==-1)
+                                    {
+                                        pppre_max_index = i;
+                                    } else if(nodes[i][13] > nodes[pppre_max_index][13]) {
+                                        pppre_max_index = i;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    document.getElementById("resultImg").src = "images/"+max_index+".png";
+                    document.getElementById("resultName").innerText = "'" + names[max_index] + "' 입니다!";
+                    document.getElementById("resultNum").innerText = names_nums[max_index] + "명이 이 멤버에 취저당했습니다.\n이 멤버와 "+(nodes[max_index][13]/40*100).toFixed(0)+"% 어울립니다!";
+                    document.getElementsByClassName("resultName")[0].innerText = names[pre_max_index]+"\n"+(nodes[pre_max_index][13]/40*100 - Math.random()*5 - 1).toFixed(0) + "% 어울립니다!";
+                    document.getElementsByClassName("resultName")[1].innerText = names[ppre_max_index]+"\n"+(nodes[ppre_max_index][13]/40*100 - Math.random()*5 - 6).toFixed(0) + "% 어울립니다!";
+                    document.getElementsByClassName("resultName")[2].innerText = names[pppre_max_index]+"\n"+(nodes[pppre_max_index][13]/40*100 - Math.random()*5 - 11).toFixed(0) + "% 어울립니다!";
+                    document.getElementsByClassName("resultImg")[0].src = "images/"+pre_max_index+".png";
+                    document.getElementsByClassName("resultImg")[1].src = "images/"+ppre_max_index+".png";
+                    document.getElementsByClassName("resultImg")[2].src = "images/"+pppre_max_index+".png";
+
+                    //window.location.href = './takanelui.html';
+                }
+          
+                  function sendData(correctName)
+                  {
+                      if(document.getElementById("name").value=="" && correctName==null)
+                      {
+                          alert("멤버 이름을 적어주세요!");
+                          return 0;
+                      }
+                      if(correctName!=null)
+                      {
+                        document.getElementById("name").value = correctName;
+                      }
+                      $.ajax({
+                      url: "https://script.google.com/macros/s/AKfycbxNyXeUxXW3EXkUGfYtzHL44IYFESgBA38hNmXNpULEFHA8O5tNXGl46NmL0yhkZstafA/exec",
+                      data: {
+                      num1 : ans[0], num2 : ans[1], num3 : ans[2], num4 : ans[3], num5 : ans[4], num6 : ans[5], num7 : ans[6], num8 : ans[7], num9 : ans[8], num10 : ans[9], num11 : ans[10], num12 : ans[11], num14 : ans[12],
+                      num13 : document.getElementById("name").value
+                      },
+                      type: "POST"
+                      });
+                      alert("전송 완료!");
+                      window.location.reload()
+                      //window.location.href = './takanelui.html';
+                  }
+
+                  var names = ["토키노 소라", "로보코", "아즈키", "사쿠라 미코", "호시마치 스이세이", "요조라 멜", "아키 로젠탈", "아카이 하아토", "시라카미 후부키", "나츠이로 마츠리", "미나토 아쿠아", "무라사키 시온", "나키리 아야메", "유즈키 초코", "오오조라 스바루", "오오카미 미오", "네코마타 오카유", "이누가미 코로네", "우사다 페코라", "시라누이 후레아", "시로가네 노엘", "호쇼 마린", "아마네 카나타", "키류 코코", "츠노마키 와타메", "토코야미 토와", "히메모리 루나", "유키하나 라미", "모모스즈 네네", "시시로 보탄", "오마루 폴카", "라플라스 다크니스", "타카네 루이", "하쿠이 코요리", "사카마타 클로에", "카자마 이로하", "아윤다 리스", "호시노바 무나", "이오피프틴", "쿠레이지 올리", "아냐 멜핏샤", "파볼리아 레이네", "베스티아 제타", "카엘라 코발스키아", "코보 카나에루", "모리 칼리오페", "타카나시 키아라", "니노마에 이나니스", "가우르 구라", "아멜리아 왓슨", "아이리스", "츠쿠모 사나", "세레스 파우나", "오로 크로니", "나나시 무메이", "하코스 벨즈"];
+                  var names_nums = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                  
+                  function readData()
+                  {
+                      google.charts.load('current', { packages: ['corechart'] }).then(function () {
+                          var query = new google.visualization.Query('http://spreadsheets.google.com/tq?key=13wAV6ljCqTAqR70ORY70j0LD5yyg1NUC6_EvYQHJ-Ts&pub=1');
+                          query.send(function (response) {            
+                              var dataTable = response.getDataTable();
+                              var jsonData = dataTable.toJSON();            
+                              jsonData = JSON.parse(jsonData);
+          
+                              for(var i=0; i < jsonData.rows.length; i++)
+                              {
+                                userCount++;
+                                var num = 100;
+                                for(var ni=0;ni<names.length;ni++)
+                                {
+                                    try
+                                    {
+                                        if(jsonData.rows[i].c[12].v == names[ni] || jsonData.rows[i].c[12].v == names[ni]+" ")
+                                        {
+                                            names_nums[ni]++;
+                                            num = ni;
+                                            break;
+                                        }
+                                    }catch(e) {
+                                        alert("데이터를 불러오는데 실패했습니다!\n테스트를 진행할 수 없습니다!\n오류코드 : "+e+"\n오류코드를 홀로우드 채널에 제보해주세요!");
+                                    }
+                                }
+                                if(num==100)
+                                {
+                                    continue;
+                                }
+                                for(var ii=0;ii<jsonData.rows[i].c.length-2;ii++)
+                                {
+                                    try
+                                    {
+                                    if(ii==12)
+                                    {
+                                        continue;
+                                    }
+                                    else if(ii==13)
+                                    {
+                                        nodes[num][12][jsonData.rows[i].c[ii].v]++;
+                                    }
+                                    else
+                                    {
+                                        nodes[num][ii][jsonData.rows[i].c[ii].v]++;
+                                    }
+                                }catch(e)
+                                {
+
+                                }
+                                }
+                              }
+
+                              for(var i=0;i<nodes.length;i++)
+                              {
+                                  for(var ii=0;ii<nodes[i].length;ii++)
+                                  {
+                                      var max = nodes[i][ii][0];
+                                      var max_index = 0;
+                                      var min = nodes[i][ii][2];
+                                      var min_index = 2;
+                                      for(var iii=0;iii<3;iii++)
+                                      {
+                                          if(nodes[i][ii][iii] > max)
+                                          {
+                                              max = nodes[i][ii][iii];
+                                              max_index = iii;
+                                          }
+                                          if(nodes[i][ii][iii] < min)
+                                          {
+                                              min = nodes[i][ii][iii];
+                                              min_index = iii;
+                                          }
+                                      }
+                                      nodes[i][ii][max_index] = 2;
+                                      nodes[i][ii][min_index] = 0;
+                                      nodes[i][ii][3 - max_index - min_index] = 1;
+                                      if(ii==4)
+                                      {
+                                        nodes[i][ii][0] *= 8;
+                                        nodes[i][ii][1] *= 8;
+                                        nodes[i][ii][2] *= 8;
+                                      }
+                                  }
+                                  //console.log(nodes[i]);
+                              }
+                              ci=userCount-1000;
+                              if(userCount<1000)
+                              {
+                                  console.log("오류가 발생했습니다!\n테스트를 진행할 수 없습니다.");
+                              }
+                          });
+                      });
+                }
+
+              </SCRIPT>
+    </body>
+</html>
