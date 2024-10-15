@@ -76,7 +76,6 @@ const names = ["토키노 소라", "로보코", "아즈키", "사쿠라 미코",
 
 window.onload = function(){
     readData();
-    console.log (names.length + ' ' + nodes.length);
 };
 
     
