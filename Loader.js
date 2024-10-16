@@ -141,12 +141,6 @@ const readData = () => {
                     nodes[i][ii][max_index] = 2;
                     nodes[i][ii][min_index] = 0;
                     nodes[i][ii][3 - max_index - min_index] = 1;
-
-                    if(ii==4) {
-                        nodes[i][ii][0] = nodes[i][ii][0]*10 - 1;
-                        nodes[i][ii][1] = nodes[i][ii][1]*10 - 1;
-                        nodes[i][ii][2] = nodes[i][ii][2]*10 - 1;
-                    }
                 }
                 //console.log(nodes[i]);
             }
@@ -156,7 +150,10 @@ const readData = () => {
             }
             saveData();
             try {
-                document.getElementById('countText').innerText = '지금까지 ' + (userCount) + '명이 취향저격 당했습니다!';
+                const countText = document.getElementById('countText');
+                countText.innerText = '지금까지 ' + (userCount) + '명이 취향저격 당했습니다!';
+                countText.classList.add('countText');
+                console.log(countText.classList);
             } catch (e) {
 
             }

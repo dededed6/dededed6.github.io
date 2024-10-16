@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.61e077d2.css",
-    "main.js": "/static/js/main.71629afb.js",
+    "main.css": "/static/css/main.81de5e4e.css",
+    "main.js": "/static/js/main.c743af3e.js",
     "static/media/OAGothic-Medium.ttf": "/static/media/OAGothic-Medium.4d7ad676f9f580ce54d3.ttf",
     "static/media/ChangwonDangamAsac-Bold_0712.ttf": "/static/media/ChangwonDangamAsac-Bold_0712.8891d4dacb23cf4dfd73.ttf",
     "static/media/Recipekorea.ttf": "/static/media/Recipekorea.7c8b6d145e70b92f4010.ttf",
@@ -75,11 +75,11 @@
     "static/media/이오피프틴.png": "/static/media/이오피프틴.89e709e186868f78d306.png",
     "static/media/토키노 소라.png": "/static/media/토키노 소라.73f1df97adf0e292331d.png",
     "index.html": "/index.html",
-    "main.61e077d2.css.map": "/static/css/main.61e077d2.css.map",
-    "main.71629afb.js.map": "/static/js/main.71629afb.js.map"
+    "main.81de5e4e.css.map": "/static/css/main.81de5e4e.css.map",
+    "main.c743af3e.js.map": "/static/js/main.c743af3e.js.map"
   },
   "entrypoints": [
-    "static/css/main.61e077d2.css",
-    "static/js/main.71629afb.js"
+    "static/css/main.81de5e4e.css",
+    "static/js/main.c743af3e.js"
   ]
 }
