@@ -1,1 +1,2 @@
-# dededed6.github.io
+# 오시다요 - OshiDAYO
+https://dededed6.github.io/
