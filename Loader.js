@@ -153,7 +153,6 @@ const readData = () => {
                 const countText = document.getElementById('countText');
                 countText.innerText = '지금까지 ' + (userCount) + '명이 취향저격 당했습니다!';
                 countText.classList.add('countText');
-                console.log(countText.classList);
             } catch (e) {
 
             }
