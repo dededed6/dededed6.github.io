@@ -151,7 +151,7 @@ const readData = () => {
             saveData();
             try {
                 const countText = document.getElementById('countText');
-                countText.innerText = '지금까지 ' + (userCount) + '명이 취향저격 당했습니다!';
+                countText.innerText = countText.innerText.replace('%', userCount);
                 countText.classList.add('countText');
             } catch (e) {
 
